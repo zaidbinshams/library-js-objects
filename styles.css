@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 90, 30);
+}
+
+div.main {
+    padding: 1rem;
+    /* background-color: #fff; */
+}
+
+div.landing {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+button {
+    padding: 0.5rem 0.7rem;
+    color: rgb(232, 224, 208);
+    background-color: rgb(40, 50, 20);
+    font-family: "Rubik", sans-serif;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
