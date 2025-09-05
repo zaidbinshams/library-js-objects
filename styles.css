@@ -1,11 +1,14 @@
 * {
     padding: 0;
     margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 body {
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(70, 90, 30);
@@ -16,11 +19,22 @@ div.main {
     /* background-color: #fff; */
 }
 
-div.landing {
+div.landing,
+div.book-list,
+div.new-form {
     padding: 1rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.8rem;
+}
+
+div.landing {
+    display: flex;
+}
+
+div.book-list {
+    max-height: 70vh;
+    scrollbar-width: auto;
 }
 
 button {
@@ -30,4 +44,5 @@ button {
     font-family: "Rubik", sans-serif;
     border-radius: 0.5rem;
     font-size: 1rem;
+    font-weight: bold;
 }
