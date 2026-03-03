@@ -38,17 +38,17 @@ addBook("test book 2", "test author 2");
 addBook("test book 1", "test author 1");
 addBook("test book 2", "test author 2");
 
-function backButton() {
+function backButton(place) {
     const back = document.createElement("button");
     back.textContent = "Go Home";
     back.style.backgroundColor = "rgb(40, 50, 20)";
-    main.appendChild(back);
+    place.appendChild(back);
     back.onclick = (e) => {
         e.preventDefault();
         landing.style.display = "flex";
         newForm.style.display = "none";
         bookList.style.display = "none";
-        main.removeChild(back);
+        place.removeChild(back);
     }
 }
 
@@ -83,7 +83,7 @@ function displayBooks() {
             bookList.appendChild(bookCard);
         }
     }
-    backButton();
+    backButton(main);
 }
 
 function inputForm() {
@@ -91,7 +91,7 @@ function inputForm() {
     bookList.style.display = "none";
     newForm.style.display = "flex";
     // store the value of all input fields into variables and then pass them as arguments to the addBook() function
-    backButton();
+    backButton(newForm);
 }
 
 function readStatus() {

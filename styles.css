@@ -59,14 +59,14 @@ div.new-form form button {
     background-color: rgb(40, 50, 20);
     font-family: "Rubik", sans-serif;
     border-radius: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 div.new-form form div label {
     text-align: center;
     font-family: "Rubik", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: rgb(232, 224, 208);
 }
