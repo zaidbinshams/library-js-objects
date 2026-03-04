@@ -8,18 +8,24 @@ const main = document.querySelector(".main");
 const landing = document.querySelector(".landing");
 const bookList = document.querySelector(".book-list");
 const newForm = document.querySelector(".new-form");
+const bookName = document.querySelector("input#name");
+const authorName = document.querySelector("input#author");
+const addButton = document.querySelector("form button");
+
 
 function Book(id, title, author, readStat) {
     this.id = id;
     this.title = title;
     this.author = author;
     this.readStat = readStat;
+    // this.changeRead = function() {
+    //     this.readStat = !readStat;
+    // };
 }
 
 function addBook(title, author) {
     let id = crypto.randomUUID();
-    let readStat = false;
-    let newBook = new Book(id, title, author, readStat);
+    let newBook = new Book(id, title, author, false);
     library.push(newBook);
 }
 
@@ -70,7 +76,7 @@ function displayBooks() {
     } else {
         for (let i = 0; i < library.length; i++) {
             const bookCard = document.createElement("div");
-            bookCard.innerHTML = `<strong>Book ID: ${library[i].id}</strong><br>${library[i].title} by ${library[i].author}<br>(read: ${library[i].readStat})`;
+            bookCard.innerHTML = `<strong>Book ID: ${library[i].id}</strong><br>${library[i].title} by ${library[i].author}<br>(read: ${library[i].readStat})<br><br><button style="font-size: 0.8rem">Change Read Status</button> <button style="font-size: 0.8rem">Delete</button>`;
             bookCard.style.color = "rgb(40, 50, 20)";
             bookCard.style.justifyContent = "center";
             bookCard.style.alignItems = "center";
@@ -90,8 +96,15 @@ function inputForm() {
     landing.style.display = "none";
     bookList.style.display = "none";
     newForm.style.display = "flex";
-    // store the value of all input fields into variables and then pass them as arguments to the addBook() function
     backButton(newForm);
+    addButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (bookName.value && authorName.value) {
+            console.table(bookName.value, authorName.value)
+            addBook(bookName.value, authorName.value);
+            alert("Book successfully added!");
+        } else alert("Please fill in the details.")
+    });
 }
 
 function readStatus() {
